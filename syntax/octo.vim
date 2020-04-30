@@ -18,6 +18,9 @@ syntax match octoString "\".*\""
 " Types
 syntax match octoType "[A-Z][a-zA-Z_']*"
 
+" Operators
+syntax match octoOperator "@\|::\|=\|+\|-\|/\|\*"
+
 " Set highlights 
 highlight default link octoLineComment Comment
 highlight default link octoKeyword Keyword
