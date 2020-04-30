@@ -4,13 +4,14 @@
 "    Credits: @Yul3n
 
 " Comments
-syntax match octoLineComment "\-\-.*$"
 
+syntax match octoLineComment "\v--.*$"
+syntax match octoLineComment "\v#.*$"
 " Keywords
 syntax keyword octoKeyword case of where when type char list float bool 
 
 " Numbers
-syntax match octoNumber "[\+\-]?[0-9]*"
+" syntax match octoNumber "[\+-]?[0-9]*"
 
 " Strings
 syntax match octoString "\"[^\"]*\""
@@ -19,22 +20,23 @@ syntax match octoChar   "'[\\]?.'"
 " Types
 syntax match octoType "[A-Z][a-zA-Z_']*"
 
-" Operators
-syntax match octoOperator "@\|::\|=\|+\|-\|/\|\*"
 
 " Functions 
 syntax keyword octoBuiltinFun map or and xor not if 
 
 " Declarations
-syntax match octoIdent "[a-z][A-Za-z' _,]*"  
-syntax region octoDecl start="[a-z][A-Za-z'_,]*" end="=" contains=octoIdent
+
+
+syntax match octoIdent "[a-z][a-zA-Z_']*" contained 
+syntax region octoDecl start="" end="\v\=$" contains=octoIdent oneline
 
 " Set highlights 
-highlight default link octoLineComment Comment
-highlight default link octoKeyword Keyword
-highlight default link octoNumber Number
-highlight default link octoString String
-highlight default link octoChar String
-highlight default link octoType Type
-highlight default link octoType Identifier 
-highlight default link octoBuiltinFun Function
+highlight link octoLineComment Comment
+highlight link octoKeyword Keyword
+highlight link octoNumber Number
+highlight link octoString String
+highlight link octoChar String
+highlight link octoType Type
+highlight link octoFun Function
+highlight link octoIdent Identifier 
+highlight link octoBuiltinFun Function
