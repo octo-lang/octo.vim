@@ -1,0 +1,5 @@
+A vim plugin to provide basic syntax highlighting for the octo programming language. To install you can put ~syntax/octo.vim~ in your ~.vim/syntax~ and ~ftdetect/octo.vim~ in your ~.vim/ftdetect~. Or just use a plugin-in manager, for instance if you use [[https://github.com/junegunn/vim-plug][vim-plug]], add:
+#+BEGIN_SRC 
+Plug 'octo-lang/octo.vim'
+#+END_SRC
+I'm not a vim expert so if you are one, your help would be truely appreciated.
